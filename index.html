@@ -10,9 +10,58 @@
       type="text/css"
     />
     <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+      @layer components {
+        .boxes {
+          @apply border-2 p-2 m-2;
+        }
+      }
+    </style>
     <title>CSS UNITS</title>
   </head>
   <body>
+    <!-- carousel -->
+    <div class="carousel w-full">
+      <div id="slide1" class="carousel-item relative w-full">
+        <img class="w-full md:w-3/4 mx-auto" src="./assets/6unit.png" alt="" />
+        <div
+          class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2"
+        >
+          <a href="#slide4" class="btn btn-circle">❮</a>
+          <a href="#slide2" class="btn btn-circle">❯</a>
+        </div>
+      </div>
+      <div id="slide2" class="carousel-item relative w-full">
+        <img src="./assets/css-unit-4.png" class="w-full md:w-3/4 mx-auto" />
+        <div
+          class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2"
+        >
+          <a href="#slide1" class="btn btn-circle">❮</a>
+          <a href="#slide3" class="btn btn-circle">❯</a>
+        </div>
+      </div>
+      <div id="slide3" class="carousel-item relative w-full">
+        <img src="./assets/css-unit-6.png" class="w-full md:w-3/4 mx-auto" />
+        <div
+          class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2"
+        >
+          <a href="#slide2" class="btn btn-circle">❮</a>
+          <a href="#slide4" class="btn btn-circle">❯</a>
+        </div>
+      </div>
+      <div id="slide4" class="carousel-item relative w-full">
+        <img
+          src="/assets/IRKAw.jpg"
+          class="w-full md:h-screen md:w-3/4 mx-auto"
+        />
+        <div
+          class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2"
+        >
+          <a href="#slide3" class="btn btn-circle">❮</a>
+          <a href="#slide1" class="btn btn-circle">❯</a>
+        </div>
+      </div>
+    </div>
     <!-- font test -->
     <p class="text-5xl text-center m-8 font-semibold">Font Test ✒</p>
     <h1 class="border-2 border-sky-400 p-8 m-2" style="font-size: 50px">
@@ -36,26 +85,31 @@
       </p>
     </h1>
     <!-- box test -->
-    <p class="text-5xl text-center m-8 font-semibold">Font Test ✒</p>
-    <h1 class="border-2 border-sky-400 p-8 m-2" style="font-size: 50px">
-      Parent size is 50px
-      <p class="font-mono text-xl text-sky-400 text-right">
-        Parent: Absolute 50px
-      </p>
-      <p style="font-size: 0.5em">Children size 0.5em</p>
-      <p style="font-size: 25px">Children size 25px</p>
-      <p style="font-size: 1.5em">Children size 1.5em</p>
-      <p style="font-size: 150%">Children size 150%</p>
-      <p class="font-mono text-xl text-sky-400 text-right">
-        Summary: 1em = 100%
-      </p>
-      <p style="font-size: 1rem">Children size 1rem</p>
-      <p style="font-size: 16px">Children size 16px</p>
-      <p style="font-size: 2.5rem">Children size 2.5rem</p>
-      <p style="font-size: 40px">Children size 40px</p>
-      <p class="font-mono text-xl text-sky-400 text-right">
-        Summary: 1rem = 16px
-      </p>
-    </h1>
+    <p class="text-5xl text-center m-8 font-semibold">Box Test 📦</p>
+    <div class="flex justify-center">
+      <div class="border-2 border-sky-400 p-8 m-2" style="width: 100%">
+        Parent size is 100%
+        <p class="font-mono text-xl text-sky-400 text-right">
+          Parent: Relatively 100%
+        </p>
+        <div class="boxes" style="width: 10rem">
+          Children size 10rem 10*1rem
+        </div>
+
+        <div class="boxes" style="width: 10em">Children size 10em 10*1em</div>
+        <div class="boxes" style="width: 160px">
+          Children size 160px 10*16px
+        </div>
+        <div class="boxes" style="width: 100%">Children size 100%</div>
+        <p class="font-mono text-xl text-sky-400 text-right">
+          Summary: em comes from the printing paper world. <br />
+          So, em, rem only relates with font size
+        </p>
+        <div class="boxes" style="width: 10vw">Children size 10vw</div>
+        <p class="font-mono text-xl text-sky-400 text-right">
+          Summary: we should use px, %, vh/vw for height/width
+        </p>
+      </div>
+    </div>
   </body>
 </html>
